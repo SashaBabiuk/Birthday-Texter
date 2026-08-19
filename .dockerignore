@@ -1,0 +1,8 @@
+.git
+.venv
+__pycache__
+*.py[cod]
+config.ini
+data
+src/data/*.session*
+src/data/media

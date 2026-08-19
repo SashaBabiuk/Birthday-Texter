@@ -1,0 +1,8 @@
+APScheduler>=3.10.4,<3.11
+fastapi>=0.115,<0.116
+Jinja2>=3.1,<3.2
+python-multipart>=0.0.9,<0.1
+PyYAML>=6.0.2,<6.1
+SQLModel>=0.0.22,<0.1
+Telethon>=1.36.0,<1.37
+uvicorn[standard]>=0.30,<0.31

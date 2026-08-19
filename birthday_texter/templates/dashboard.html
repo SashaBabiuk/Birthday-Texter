@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}
+<h1>Dashboard</h1><section class="cards">
+<article><small>Telegram</small><strong class="{{ 'ok' if telegram_status.connected else 'bad' }}">{{ 'Connected as ' ~ telegram_status.account if telegram_status.connected else 'Disconnected' }}</strong></article>
+<article><small>Today</small><strong>{{ today|length }}</strong></article><article><small>This week</small><strong>{{ week_count }}</strong></article><article><small>Total contacts</small><strong>{{ birthdays|length }}</strong></article>
+</section>
+{% if telegram_status.error %}<p class="error">Telegram: {{ telegram_status.error }}</p>{% endif %}
+<section><h2>Next birthday</h2>{% if next_birthday %}<p><strong>{{ next_birthday[2].name }}</strong><br>{{ next_birthday[0].strftime('%d %B') }}, {{ next_birthday[1] }}</p>{% else %}<p>No birthdays configured.</p>{% endif %}</section>
+<section><h2>Recent sends</h2>{% include "history_table.html" %}</section>{% endblock %}

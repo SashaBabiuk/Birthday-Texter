@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Birthday Texter{% endblock %}</title>
+<link rel="stylesheet" href="/static/style.css"><script src="https://unpkg.com/htmx.org@2.0.4" defer></script></head>
+<body><header><nav><a href="/"><strong>Birthday Texter</strong></a><a href="/birthdays">Birthdays</a><a href="/history">History</a></nav></header>
+<main>{% if request.query_params.get('notice') %}<p class="notice">{{ request.query_params.get('notice') }}</p>{% endif %}{% block content %}{% endblock %}</main>
+<footer>Times shown in Europe/Kyiv</footer></body></html>

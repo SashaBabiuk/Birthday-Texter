@@ -1,0 +1,37 @@
+# vscode settings
+.vscode
+
+# python venv and pycache
+.venv
+venv/
+__pycache__
+*.py[cod]
+*.egg-info/
+
+# local environment and tooling
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# media (for saving repo space)
+src/data/media/pics/*
+src/data/media/videos/*
+
+# sensitive data
+config.ini
+src/data/bot.session
+src/data/*.session*
+src/data/*.yaml
+
+# Birthday Texter persistent state
+data/
+*.session
+*.session-journal
+*.db
+*.sqlite
+*.sqlite3

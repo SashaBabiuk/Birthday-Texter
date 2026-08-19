@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}<h1>{{ 'Edit' if birthday else 'Add' }} birthday</h1>
+<form class="editor" method="post" action="{{ '/birthdays/' ~ birthday.id if birthday else '/birthdays' }}">
+<label>Name<input name="name" required value="{{ birthday.name if birthday else '' }}"></label>
+<label>Telegram recipient<input name="telegram_recipient" required placeholder="@username or numeric ID" value="{{ birthday.telegram_recipient if birthday else '' }}"></label>
+<div class="row"><label>Month<input type="number" name="birthday_month" min="1" max="12" required value="{{ birthday.birthday_month if birthday else '' }}"></label><label>Day<input type="number" name="birthday_day" min="1" max="31" required value="{{ birthday.birthday_day if birthday else '' }}"></label><label>Send time<input type="time" name="send_time" required value="{{ birthday.send_time if birthday else '10:00' }}"></label></div>
+<label>Message<textarea name="message" rows="5" required>{{ birthday.message if birthday else '' }}</textarea></label><label class="check"><input type="checkbox" name="enabled" {{ 'checked' if birthday is none or birthday.enabled else '' }}> Enabled</label>
+<div><button class="primary" type="submit">Save</button> <a href="/birthdays">Cancel</a></div></form>{% endblock %}
