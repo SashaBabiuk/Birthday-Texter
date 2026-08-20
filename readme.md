@@ -105,6 +105,13 @@ Open <http://127.0.0.1:8080>.
 
 ## Run with Docker Compose
 
+The interactive startup script saves Telegram credentials, authorizes the persistent session, and
+starts the Docker application:
+
+```bash
+./start.sh
+```
+
 Ensure `data/telegram.session` exists, then run:
 
 ```bash
